@@ -13,7 +13,7 @@ import es.cic.curso25.proy005.model.Motor;
 @Repository
 public class MotorRepository {
 
-    private Map<Long, Motor> motores = new HashMap<>();
+    public Map<Long, Motor> motores = new HashMap<>();
 
     public long create(Motor motor) {
         long mayor = getSiguienteId();
@@ -22,7 +22,7 @@ public class MotorRepository {
         return motor.getId();
     }
 
-    private long getSiguienteIdConStreams() {
+    public long getSiguienteIdConStreams() {
         long mayor = 
             motores
                 .keySet()
@@ -35,7 +35,7 @@ public class MotorRepository {
 
 
 
-    private long getSiguienteId() {
+    public long getSiguienteId() {
         long mayor = 0;
         
         Set<Long> ids = motores.keySet();
